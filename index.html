@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Todo App</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+	<body>
+		<div class="todo-container">
+			<h1>Todo App</h1>
+			<div class="tabs">
+				<div class="tab active" onclick="openTab(event, 'tab1')">
+					Pending Tasks
+				</div>
+				<div class="tab" onclick="openTab(event, 'tab2')">Completed Tasks</div>
+			</div>
+
+			<div class="tab-content" id="tab1">
+				<div class="add-todo-container">
+					<h2>Pending Tasks</h2>
+					<button onclick="openAddModal()"><img src="./images/add.png" class="icon" alt="Add"></button>
+				</div>
+				<ul id="todo-list"></ul>
+			</div>
+
+			<div class="tab-content" id="tab2">
+				<h2>Completed Tasks</h2>
+				<ul id="completed-todo-list"></ul>
+			</div>
+		</div>
+
+		<!-- Add Todo Modal -->
+		<div id="add-todo-modal" class="modal">
+			<div class="modal-content">
+				<h2>Add Todo</h2>
+        <p>Title</p>
+				<input type="text" id="add-todo-input__title" />
+        <p>Description</p>
+				<input type="text" id="add-todo-input__desc" />
+				<div class="modal-buttons">
+					<button class="confirm" onclick="addTodo()">Add</button>
+					<button class="cancel" onclick="closeAddModal()">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Edit Todo Modal -->
+		<div id="edit-todo-modal" class="modal">
+			<div class="modal-content">
+				<h2>Edit Todo</h2>
+        <p>Title</p>
+				<input type="text" id="edit-todo-input__title" />
+        <p>Description</p>
+				<input type="text" id="edit-todo-input__desc" />
+				<div class="modal-buttons">
+					<button class="confirm" onclick="saveEditedTodo()">Save</button>
+					<button class="cancel" onclick="closeEditModal()">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
